@@ -1,0 +1,436 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rey Soon Salon</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 35px;
+        }
+
+        header p {
+            margin-top: 5px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background-color: #d63384;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: black;
+        }
+
+        /* HOME */
+        .home {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #ffd6e8;
+            padding: 40px;
+        }
+
+        .home h2 {
+            font-size: 45px;
+            color: #d63384;
+        }
+
+        .home p {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #d63384;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #222;
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #d63384;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* SERVICES */
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .service {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .service h3 {
+            color: #d63384;
+            margin: 15px 0;
+        }
+
+        /* PICTURES */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 280px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-item h3 {
+            margin-top: 10px;
+            color: #d63384;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: white;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background-color: #ffd6e8;
+        }
+
+        .contact p {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            .home h2 {
+                font-size: 32px;
+            }
+
+            .service,
+            .gallery-item {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>REY SOON SALON</h1>
+
+        <p>Beauty • Braiding • Hair Styling</p>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="home" id="home">
+
+        <div>
+
+            <h2>Welcome to Rey Soon Salon</h2>
+
+            <p>
+                Karibu Rey Soon Salon kwa huduma bora za kusuka
+                na kutengeneza nywele.
+            </p>
+
+            <a href="#contact" class="button">
+                Book Appointment
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="services-container">
+
+
+            <div class="service">
+
+                <h3>Box Braids</h3>
+
+                <p>
+                    Tunatengeneza Box Braids
+                    kwa mitindo mbalimbali.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Knotless Braids</h3>
+
+                <p>
+                    Pata Knotless Braids
+                    zenye style nzuri na ya kisasa.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Cornrows</h3>
+
+                <p>
+                    Tunatengeneza Cornrows
+                    za kawaida na za kisasa.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Hair Treatment</h3>
+
+                <p>
+                    Huduma ya kuosha na kutunza
+                    nywele zako.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY / PICTURES -->
+    <section id="gallery">
+
+        <h2>Our Hairstyles</h2>
+
+        <p style="margin-bottom: 30px;">
+            Weka picha zako kwenye sehemu hizi.
+        </p>
+
+
+        <div class="gallery">
+
+
+            <!-- PICHA YA KWANZA -->
+            <div class="gallery-item">
+
+                <!-- WEKA PICHA YAKO HAPA -->
+                <img src="Box Braids.jpg" alt="Box Braids">
+
+                <h3>Box Braids</h3>
+
+            </div>
+
+
+            <!-- PICHA YA PILI -->
+            <div class="gallery-item">
+
+                <!-- WEKA PICHA YAKO HAPA -->
+                <img src="Knotless Braids.jpg" alt="Knotless Braids">
+
+                <h3>Knotless Braids</h3>
+
+            </div>
+
+
+            <!-- PICHA YA TATU -->
+            <div class="gallery-item">
+
+                <!-- WEKA PICHA YAKO HAPA -->
+                <img src="Cornrows.jpg" alt="Cornrows">
+
+                <h3>Cornrows</h3>
+
+            </div>
+
+
+            <!-- PICHA YA NNE -->
+            <div class="gallery-item">
+
+                <!-- WEKA PICHA YAKO HAPA -->
+                <img src="Hair Style.jpg" alt="Hair Style">
+
+                <h3>Hair Style</h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>About Rey Soon</h2>
+
+        <p>
+
+            Rey Soon Salon ni saluni inayotoa huduma
+            mbalimbali za kusuka na kutengeneza nywele.
+            Tunazingatia usafi, ubora wa huduma na
+            mitindo ya kisasa ili kumfanya kila mteja
+            aridhike na huduma yetu.
+
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📞 Phone: 0787999784</p>
+
+        <p>📧 Email: reysoon@gmail.com</p>
+
+        <p>📍 Location: <b><i>GEITA</i></b>, Tanzania</p>
+
+        <br>
+
+        <a href="tel:07XXXXXXXX" class="button">
+            Call Now
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Rey Soon Salon.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
