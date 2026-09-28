@@ -1,4 +1,4 @@
-````html
+```html
 <!DOCTYPE html>
 <html lang="sw">
 
@@ -29,11 +29,11 @@
             color: white;
             text-align: center;
             padding: 22px;
-        }
+        }a
 
         header h1 {
-            font-size: 35px;
             color: #ff5c9a;
+            font-size: 35px;
         }
 
         header p {
@@ -53,7 +53,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
             font-weight: bold;
         }
 
@@ -64,9 +64,11 @@
         /* HOME */
         .home {
             min-height: 600px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
 
             background:
@@ -155,7 +157,7 @@
 
         .service {
             background: white;
-            width: 260px;
+            width: 270px;
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,.12);
@@ -171,7 +173,7 @@
             margin-bottom: 12px;
         }
 
-        /* BEI */
+        /* PRICE */
         .price {
             margin-top: 18px;
             font-size: 20px;
@@ -218,10 +220,6 @@
 
         .why h2 {
             color: #ff5c9a;
-        }
-
-        .why .section-text {
-            color: #ccc;
         }
 
         .why-container {
@@ -284,7 +282,19 @@
         }
 
         .send-button {
+            width: 100%;
             font-size: 16px;
+        }
+
+        /* SUCCESS */
+        .success {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 8px;
+            text-align: center;
         }
 
         /* CONTACT */
@@ -314,25 +324,19 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
+
             background: #25D366;
             color: white;
+
             padding: 15px 20px;
             border-radius: 40px;
+
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,.3);
-            z-index: 2000;
-        }
 
-        /* UJUMBE */
-        .success {
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #d4edda;
-            color: #155724;
-            border-radius: 8px;
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,.3);
+
+            z-index: 2000;
         }
 
         /* MOBILE */
@@ -361,7 +365,6 @@
             .booking-container {
                 padding: 25px;
             }
-
         }
 
     </style>
@@ -435,14 +438,19 @@
     </p>
 
     <p>
+
         Karibu <b>Rey Soon Saluni</b>.
+
         Tunatoa huduma mbalimbali za kusuka,
         kutengeneza na kutunza nywele.
+
         Tunazingatia usafi, ubora wa huduma,
         ubunifu na mahitaji ya kila mteja.
+
         Lengo letu ni kuhakikisha kila mteja
         anapata huduma nzuri na kuondoka akiwa
         ameridhika.
+
     </p>
 
 </section>
@@ -455,8 +463,9 @@
     <h2>Huduma Zetu</h2>
 
     <p class="section-text">
-        Chagua huduma unayoipenda
+        Chagua huduma unayoipenda na angalia bei.
     </p>
+
 
     <div class="services-container">
 
@@ -474,7 +483,7 @@
             </p>
 
             <p class="price">
-                Bei: TSh 25,000
+                TSh 30,000
             </p>
 
         </div>
@@ -493,7 +502,7 @@
             </p>
 
             <p class="price">
-                Bei: TSh 30,000
+                TSh 35,000
             </p>
 
         </div>
@@ -511,7 +520,7 @@
             </p>
 
             <p class="price">
-                Bei: TSh 15,000
+                TSh 20,000
             </p>
 
         </div>
@@ -530,7 +539,7 @@
             </p>
 
             <p class="price">
-                Bei: TSh 10,000
+                TSh 15,000
             </p>
 
         </div>
@@ -550,6 +559,7 @@
     <p class="section-text">
         Hizi ni baadhi ya nywele tunazotengeneza.
     </p>
+
 
     <div class="gallery">
 
@@ -591,7 +601,7 @@
 
             <img
                 src="Hair Style.jpg"
-                alt="Mitindo Mingine">
+                alt="Mitindo ya Nywele">
 
             <h3>Mitindo Mingine</h3>
 
@@ -612,6 +622,7 @@
     <p class="section-text">
         Tunajali uzuri na kuridhika kwa kila mteja.
     </p>
+
 
     <div class="why-container">
 
@@ -679,6 +690,7 @@
         Jaza taarifa zako ili kuweka nafasi ya huduma.
     </p>
 
+
     <div class="booking-container">
 
         <form id="bookingForm">
@@ -720,11 +732,25 @@
                         Chagua huduma
                     </option>
 
-                    <option>Box Braids</option>
-                    <option>Knotless Braids</option>
-                    <option>Cornrows</option>
-                    <option>Matunzo ya Nywele</option>
-                    <option>Mtindo Mwingine</option>
+                    <option value="Box Braids">
+                        Box Braids
+                    </option>
+
+                    <option value="Knotless Braids">
+                        Knotless Braids
+                    </option>
+
+                    <option value="Cornrows">
+                        Cornrows
+                    </option>
+
+                    <option value="Matunzo ya Nywele">
+                        Matunzo ya Nywele
+                    </option>
+
+                    <option value="Mtindo Mwingine">
+                        Mtindo Mwingine
+                    </option>
 
                 </select>
 
@@ -765,7 +791,8 @@
 
             <div class="success" id="success">
 
-                Taarifa zako zimetumwa WhatsApp.
+                ✅ Taarifa zako zimehifadhiwa vizuri.
+                Sasa WhatsApp itafunguka.
 
             </div>
 
@@ -792,15 +819,18 @@
     </p>
 
     <p>
-        📧 Barua pepe: <b>charlesmalulu@gmail.com</b>
+        📧 Barua pepe:
+        <b>charlesmalulu@gmail.com</b>
     </p>
 
     <p>
-        📍 Mahali: <b><i>Dar es Salam,TANZANIA</i></b>
+        📍 Mahali:
+        <b>GEITA, Tanzania</b>
     </p>
 
     <p>
-        🕒 Tunafungua: <b>Jumatatu - Jumamosi</b>
+        🕒 Tunafungua:
+        <b>Jumatatu - Jumamosi</b>
     </p>
 
     <br>
@@ -821,9 +851,12 @@
 <footer>
 
     <p>
+
         © 2026
         <span>Rey Soon Saluni</span>
+
         - Haki zote zimehifadhiwa.
+
     </p>
 
 </footer>
@@ -844,36 +877,112 @@
 
 <script>
 
-    const bookingForm =
-        document.getElementById("bookingForm");
-
-    bookingForm.addEventListener(
-        "submit",
-        function(event) {
-
-            event.preventDefault();
-
-            let name =
-                document.getElementById("name").value;
-
-            let phone =
-                document.getElementById("phone").value;
-
-            let service =
-                document.getElementById("service").value;
-
-            let date =
-                document.getElementById("date").value;
-
-            let message =
-                document.getElementById("message").value;
+const bookingForm =
+    document.getElementById("bookingForm");
 
 
-            let salonNumber =
-                "255787999784";
+bookingForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
 
 
-            let whatsappMessage =
+        // Pata taarifa kutoka kwenye form
+
+        const name =
+            document.getElementById("name").value;
+
+        const phone =
+            document.getElementById("phone").value;
+
+        const service =
+            document.getElementById("service").value;
+
+        const date =
+            document.getElementById("date").value;
+
+        const message =
+            document.getElementById("message").value;
+
+
+        // BEI ZA HUDUMA
+
+        const prices = {
+
+            "Box Braids": 30000,
+
+            "Knotless Braids": 35000,
+
+            "Cornrows": 20000,
+
+            "Matunzo ya Nywele": 15000,
+
+            "Mtindo Mwingine": 0
+
+        };
+
+
+        const price =
+            prices[service] || 0;
+
+
+        // TUMA BOOKING KWENYE BACKEND
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/api/bookings",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify({
+
+                        name: name,
+
+                        phone: phone,
+
+                        service: service,
+
+                        price: price,
+
+                        date: date,
+
+                        message: message
+
+                    })
+
+                }
+            );
+
+
+            const data =
+                await response.json();
+
+
+            // Kama imehifadhiwa
+
+            if (data.success) {
+
+                document.getElementById("success")
+                    .style.display = "block";
+
+
+                // WHATSAPP
+
+                const salonNumber =
+                    "255787999784";
+
+
+                const whatsappMessage =
 
 `Habari Rey Soon Saluni,
 
@@ -885,29 +994,62 @@ Namba ya simu: ${phone}
 
 Huduma: ${service}
 
+Bei: TSh ${price.toLocaleString()}
+
 Tarehe: ${date}
 
-Ujumbe: ${message}`;
+Ujumbe:
+${message}`;
 
 
-            let whatsappURL =
-                "https://wa.me/"
-                + salonNumber
-                + "?text="
-                + encodeURIComponent(whatsappMessage);
+                const whatsappURL =
+
+                    "https://wa.me/" +
+                    salonNumber +
+                    "?text=" +
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
+                // Fungua WhatsApp
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+
+                // Safisha form
+
+                bookingForm.reset();
+
+
+            } else {
+
+                alert(
+                    "Samahani, taarifa hazijahifadhiwa."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "Backend error:",
+                error
             );
 
 
-            document.getElementById("success")
-                .style.display = "block";
+            alert(
+                "Backend haipatikani. Hakikisha node server.js inaendelea kufanya kazi."
+            );
 
         }
-    );
+
+    }
+);
 
 </script>
 
