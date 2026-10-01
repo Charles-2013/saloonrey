@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="sw">
 
@@ -29,7 +28,7 @@ html
             color: white;
             text-align: center;
             padding: 22px;
-        }a
+        }
 
         header h1 {
             color: #ff5c9a;
@@ -64,11 +63,9 @@ html
         /* HOME */
         .home {
             min-height: 600px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
 
             background:
@@ -173,7 +170,6 @@ html
             margin-bottom: 12px;
         }
 
-        /* PRICE */
         .price {
             margin-top: 18px;
             font-size: 20px;
@@ -324,18 +320,13 @@ html
             position: fixed;
             bottom: 25px;
             right: 25px;
-
             background: #25D366;
             color: white;
-
             padding: 15px 20px;
             border-radius: 40px;
-
             text-decoration: none;
             font-weight: bold;
-
             box-shadow: 0 4px 15px rgba(0,0,0,.3);
-
             z-index: 2000;
         }
 
@@ -466,11 +457,7 @@ html
         Chagua huduma unayoipenda na angalia bei.
     </p>
 
-
     <div class="services-container">
-
-
-        <!-- BOX BRAIDS -->
 
         <div class="service">
 
@@ -489,8 +476,6 @@ html
         </div>
 
 
-        <!-- KNOTLESS -->
-
         <div class="service">
 
             <h3>Knotless Braids</h3>
@@ -508,8 +493,6 @@ html
         </div>
 
 
-        <!-- CORNROWS -->
-
         <div class="service">
 
             <h3>Cornrows</h3>
@@ -525,8 +508,6 @@ html
 
         </div>
 
-
-        <!-- MATUNZO -->
 
         <div class="service">
 
@@ -544,7 +525,6 @@ html
 
         </div>
 
-
     </div>
 
 </section>
@@ -560,9 +540,7 @@ html
         Hizi ni baadhi ya nywele tunazotengeneza.
     </p>
 
-
     <div class="gallery">
-
 
         <div class="gallery-item">
 
@@ -601,12 +579,11 @@ html
 
             <img
                 src="Hair Style.jpg"
-                alt="Mitindo ya Nywele">
+                alt="Mitindo Mingine">
 
             <h3>Mitindo Mingine</h3>
 
         </div>
-
 
     </div>
 
@@ -623,9 +600,7 @@ html
         Tunajali uzuri na kuridhika kwa kila mteja.
     </p>
 
-
     <div class="why-container">
-
 
         <div class="why-box">
 
@@ -669,11 +644,10 @@ html
 
             <p>
                 Unaweza kuweka nafasi yako
-                kupitia WhatsApp.
+                kupitia mfumo wetu.
             </p>
 
         </div>
-
 
     </div>
 
@@ -695,10 +669,11 @@ html
 
         <form id="bookingForm">
 
-
             <div class="form-group">
 
-                <label>Jina Kamili</label>
+                <label for="name">
+                    Jina Kamili
+                </label>
 
                 <input
                     type="text"
@@ -711,7 +686,9 @@ html
 
             <div class="form-group">
 
-                <label>Namba ya Simu</label>
+                <label for="phone">
+                    Namba ya Simu
+                </label>
 
                 <input
                     type="tel"
@@ -724,7 +701,9 @@ html
 
             <div class="form-group">
 
-                <label>Chagua Huduma</label>
+                <label for="service">
+                    Chagua Huduma
+                </label>
 
                 <select id="service" required>
 
@@ -759,7 +738,9 @@ html
 
             <div class="form-group">
 
-                <label>Tarehe Unayopendelea</label>
+                <label for="date">
+                    Tarehe Unayopendelea
+                </label>
 
                 <input
                     type="date"
@@ -771,7 +752,9 @@ html
 
             <div class="form-group">
 
-                <label>Ujumbe</label>
+                <label for="message">
+                    Ujumbe
+                </label>
 
                 <textarea
                     id="message"
@@ -782,20 +765,22 @@ html
 
             <button
                 type="submit"
-                class="button send-button">
+                class="button send-button"
+                id="submitButton">
 
                 Tuma Ombi la Nafasi
 
             </button>
 
 
-            <div class="success" id="success">
+            <div
+                class="success"
+                id="success">
 
-                ✅ Taarifa zako zimehifadhiwa vizuri.
-                Sasa WhatsApp itafunguka.
+                ✅ Booking yako imehifadhiwa vizuri.
+                Tunakushukuru kwa kuchagua Rey Soon Saluni.
 
             </div>
-
 
         </form>
 
@@ -880,6 +865,12 @@ html
 const bookingForm =
     document.getElementById("bookingForm");
 
+const submitButton =
+    document.getElementById("submitButton");
+
+const successMessage =
+    document.getElementById("success");
+
 
 bookingForm.addEventListener(
     "submit",
@@ -887,14 +878,17 @@ bookingForm.addEventListener(
 
         event.preventDefault();
 
+        submitButton.disabled = true;
 
-        // Pata taarifa kutoka kwenye form
+        submitButton.textContent =
+            "Inatuma taarifa...";
+
 
         const name =
-            document.getElementById("name").value;
+            document.getElementById("name").value.trim();
 
         const phone =
-            document.getElementById("phone").value;
+            document.getElementById("phone").value.trim();
 
         const service =
             document.getElementById("service").value;
@@ -903,10 +897,10 @@ bookingForm.addEventListener(
             document.getElementById("date").value;
 
         const message =
-            document.getElementById("message").value;
+            document.getElementById("message").value.trim();
 
 
-        // BEI ZA HUDUMA
+        /* BEI ZA HUDUMA */
 
         const prices = {
 
@@ -927,12 +921,12 @@ bookingForm.addEventListener(
             prices[service] || 0;
 
 
-        // TUMA BOOKING KWENYE BACKEND
-
         try {
 
+            /* CONNECT TO RENDER BACKEND */
+
             const response = await fetch(
-                "http://localhost:5000/api/bookings",
+                "https://reysaloonbackend-2.onrender.com/api/bookings",
                 {
 
                     method: "POST",
@@ -968,15 +962,13 @@ bookingForm.addEventListener(
                 await response.json();
 
 
-            // Kama imehifadhiwa
+            if (response.ok && data.success) {
 
-            if (data.success) {
-
-                document.getElementById("success")
-                    .style.display = "block";
+                successMessage.style.display =
+                    "block";
 
 
-                // WHATSAPP
+                /* WHATSAPP */
 
                 const salonNumber =
                     "255787999784";
@@ -1003,7 +995,6 @@ ${message}`;
 
 
                 const whatsappURL =
-
                     "https://wa.me/" +
                     salonNumber +
                     "?text=" +
@@ -1012,7 +1003,7 @@ ${message}`;
                     );
 
 
-                // Fungua WhatsApp
+                /* Fungua WhatsApp */
 
                 window.open(
                     whatsappURL,
@@ -1020,15 +1011,20 @@ ${message}`;
                 );
 
 
-                // Safisha form
+                /* Safisha form */
 
                 bookingForm.reset();
 
 
+                submitButton.textContent =
+                    "Booking Imetumwa ✓";
+
+
             } else {
 
-                alert(
-                    "Samahani, taarifa hazijahifadhiwa."
+                throw new Error(
+                    data.message ||
+                    "Booking haikuhifadhiwa."
                 );
 
             }
@@ -1043,8 +1039,14 @@ ${message}`;
 
 
             alert(
-                "Backend haipatikani. Hakikisha node server.js inaendelea kufanya kazi."
+                "Samahani, booking haikufanikiwa. Tafadhali jaribu tena."
             );
+
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                "Tuma Ombi la Nafasi";
 
         }
 
@@ -1057,4 +1059,3 @@ ${message}`;
 </body>
 
 </html>
-```
