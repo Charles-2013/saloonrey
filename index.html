@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -606,7 +605,6 @@ footer span {
 <script>
 "use strict";
 
-// Mfumo mwepesi wa kubadilisha lugha bila Google Translate.
 const languageSelect = document.getElementById("languageSelect");
 
 function changeLanguage(language) {
@@ -648,7 +646,12 @@ function changeLanguage(language) {
     }
 }
 
+// Kusikiliza mabadiliko kwenye simu na kompyuta kwa kutumia matukio mawili (change na input)
 languageSelect.addEventListener("change", function() {
+    changeLanguage(this.value);
+});
+
+languageSelect.addEventListener("input", function() {
     changeLanguage(this.value);
 });
 
@@ -807,4 +810,3 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
 </body>
 </html>
-```
