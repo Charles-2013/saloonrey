@@ -1,9 +1,10 @@
-```html
+
 <!DOCTYPE html>
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#d63384">
 <title>REY SOON SALUNI</title>
 
 <style>
@@ -42,6 +43,7 @@ input,select,textarea{width:100%;padding:13px;border:1px solid #ccc;border-radiu
 input:focus,select:focus,textarea:focus{outline:2px solid #f7b4d2;border-color:#d63384}
 textarea{height:100px;resize:vertical}
 .send-button{width:100%;border-radius:8px;margin:0}
+button:disabled{opacity:.6;cursor:not-allowed}
 .success,.error{display:none;padding:14px;margin-top:15px;border-radius:8px;text-align:center;overflow-wrap:anywhere}
 .success{background:#d4edda;color:#155724}
 .error{background:#f8d7da;color:#721c24}
@@ -51,11 +53,9 @@ textarea{height:100px;resize:vertical}
 footer{background:#111;color:white;text-align:center;padding:22px}
 footer span{color:#ff5c9a}
 .whatsapp{position:fixed;right:10px;bottom:12px;z-index:2000;background:#25d366;color:white;padding:11px 15px;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 3px 12px #0003}
-.translator{position:fixed;right:10px;bottom:68px;z-index:3000;width:175px;max-width:calc(100vw - 20px);background:white;padding:9px;border:1px solid #f0c0d8;border-radius:10px;box-shadow:0 3px 12px #0002}
-.translator label{font-size:12px;color:#d63384}
-#google_translate_element{min-height:35px;overflow:hidden}
-.goog-te-gadget{font-size:12px!important}
-.goog-te-gadget .goog-te-combo{max-width:100%;width:100%;padding:6px;margin:4px 0!important;font-size:13px}
+.translator{position:fixed;right:10px;bottom:68px;z-index:3000;width:175px;max-width:calc(100vw - 20px);background:white;padding:10px;border:1px solid #d63384;border-radius:10px;box-shadow:0 3px 12px #0003}
+.translator label{font-size:13px;color:#d63384;margin-bottom:6px}
+.translator select{width:100%;padding:9px;border:1px solid #d63384;border-radius:6px;font-size:14px;background:white}
 @media(max-width:600px){
 nav{gap:0;padding:6px 2px}
 nav a{font-size:12px;padding:7px 6px}
@@ -65,6 +65,7 @@ section{padding:40px 14px}
 .service,.gallery-item,.why-box{width:100%;max-width:350px}
 .booking-container{padding:18px 14px}
 .gallery-item img{height:260px}
+.translator{right:8px;bottom:68px;width:160px}
 }
 </style>
 </head>
@@ -201,14 +202,22 @@ section{padding:40px 14px}
 
 <a class="whatsapp" href="https://wa.me/255787999784" target="_blank" rel="noopener">💬 WhatsApp</a>
 
+<!-- KISANDUKU CHA KUBADILI LUGHA -->
 <div class="translator">
-<label>🌐 Badili Lugha / Translate</label>
-<div id="google_translate_element">Inapakia lugha...</div>
+<label for="languageSelect">🌐 Badili Lugha / Translate</label>
+<select id="languageSelect">
+<option value="sw">🇹🇿 Kiswahili</option>
+<option value="en">🇬🇧 English</option>
+</select>
 </div>
+
+<!-- GOOGLE TRANSLATE -->
+<div id="google_translate_element" style="display:none"></div>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* TAREHE YA BOOKING */
 const dateInput = document.getElementById("date");
 
 function localDate() {
@@ -220,6 +229,7 @@ function localDate() {
 
 dateInput.min = localDate();
 
+/* BEI */
 const prices = {
     "Box Braids": 30000,
     "Knotless Braids": 35000,
@@ -228,6 +238,7 @@ const prices = {
     "Mtindo Mwingine": 0
 };
 
+/* BOOKING */
 document.getElementById("bookingForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
@@ -244,7 +255,6 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     const date = dateInput.value;
     const time = document.getElementById("time").value;
     const message = document.getElementById("message").value.trim();
-    const price = prices[service];
 
     if (date < localDate()) {
         errorBox.textContent = "Tafadhali chagua tarehe ya leo au ya baadaye.";
@@ -266,7 +276,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
                     phone,
                     service,
                     hairstyle: service,
-                    price,
+                    price: prices[service],
                     date,
                     time,
                     message
@@ -280,28 +290,31 @@ document.getElementById("bookingForm").addEventListener("submit", async function
             throw new Error(data.message || "Booking haijahifadhiwa.");
         }
 
-        success.textContent = "✅ Booking imehifadhiwa kwa mafanikio! Bonyeza kiungo hapa chini kuwasiliana na saluni kupitia WhatsApp.";
+        success.textContent = "✅ Booking imehifadhiwa! Bonyeza hapa chini kuwasiliana na saluni.";
         success.style.display = "block";
+
+        const amount = prices[service]
+            ? "TSh " + prices[service].toLocaleString("en-US")
+            : "Itajadiliwa";
 
         const whatsappMessage =
 `Habari Rey Soon Saluni!
 Jina: ${name}
 Simu: ${phone}
 Huduma: ${service}
-Bei: ${price ? "TSh " + price.toLocaleString("en-US") : "Itajadiliwa"}
+Bei: ${amount}
 Tarehe: ${date}
 Muda: ${time || "Sijachagua muda"}
 Ujumbe: ${message || "Hakuna"}`;
 
-        const url = "https://wa.me/255787999784?text=" +
-            encodeURIComponent(whatsappMessage);
-
         const link = document.createElement("a");
-        link.href = url;
+        link.href = "https://wa.me/255787999784?text=" +
+            encodeURIComponent(whatsappMessage);
         link.target = "_blank";
         link.rel = "noopener";
         link.className = "button green";
         link.textContent = "Fungua WhatsApp";
+
         success.appendChild(document.createElement("br"));
         success.appendChild(link);
 
@@ -310,7 +323,7 @@ Ujumbe: ${message || "Hakuna"}`;
 
     } catch (err) {
         console.error(err);
-        errorBox.textContent = "❌ Booking haikufanikiwa. Angalia intaneti yako au wasiliana nasi kwa simu.";
+        errorBox.textContent = "❌ Booking haikufanikiwa. Angalia intaneti au wasiliana nasi kwa simu.";
         errorBox.style.display = "block";
     } finally {
         button.disabled = false;
@@ -318,6 +331,41 @@ Ujumbe: ${message || "Hakuna"}`;
     }
 });
 
+/* KUBADILI LUGHA */
+document.getElementById("languageSelect").addEventListener("change", function() {
+    const language = this.value;
+
+    if (language === "sw") {
+        setGoogleLanguage("sw");
+        return;
+    }
+
+    setGoogleLanguage(language);
+});
+
+function setGoogleLanguage(language) {
+    // Jaribu kubadili lugha kupitia Google Translate widget.
+    const combo = document.querySelector(".goog-te-combo");
+
+    if (combo) {
+        combo.value = language;
+        combo.dispatchEvent(new Event("change"));
+        return;
+    }
+
+    // Ikiwa widget bado haijapakia, weka lugha kwenye cookie.
+    document.cookie = "googtrans=/sw/" + language + ";path=/";
+
+    if (location.hostname) {
+        document.cookie =
+            "googtrans=/sw/" + language +
+            ";path=/;domain=" + location.hostname;
+    }
+
+    location.reload();
+}
+
+/* GOOGLE TRANSLATE INITIALIZATION */
 window.googleTranslateElementInit = function() {
     new google.translate.TranslateElement({
         pageLanguage: "sw",
@@ -327,8 +375,9 @@ window.googleTranslateElementInit = function() {
 };
 </script>
 
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<script
+src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+async></script>
 
 </body>
 </html>
-```
