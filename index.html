@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="sw" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>REY SOON SALUNI</title>
+<title>REY SALON</title>
 
 <style>
 :root {
@@ -62,10 +62,30 @@ header {
     z-index: 100;
 }
 
-.logo {
-    font-size: 23px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-text {
+    line-height: 1.1;
+}
+
+.logo-title {
+    font-size: 20px;
     font-weight: bold;
     color: var(--pink);
+    letter-spacing: 1px;
+}
+
+.logo-subtitle {
+    font-size: 10px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 300;
+    display: block;
 }
 
 nav {
@@ -90,7 +110,6 @@ nav a:hover {
     gap: 12px;
 }
 
-/* Lang & Theme Switchers */
 .lang-switcher {
     display: flex;
     background: rgba(255,255,255,0.1);
@@ -336,7 +355,7 @@ footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 30px 15px 90px 15px; /* Added extra bottom padding so button doesn't block developer contacts */
+    padding: 30px 15px 90px 15px;
     font-size: 14px;
 }
 
@@ -344,7 +363,6 @@ footer span {
     color: var(--pink);
 }
 
-/* Developer Contact Section - Specifically Optimized for Mobile */
 .developer-info {
     margin-top: 15px;
     padding: 15px 10px;
@@ -381,7 +399,6 @@ footer span {
     color: white;
 }
 
-/* Floating WhatsApp Button - Lifted Higher on Mobile */
 .floating-whatsapp {
     position: fixed;
     bottom: 25px;
@@ -405,7 +422,6 @@ footer span {
     transform: scale(1.1);
 }
 
-/* Modal Popup */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -499,8 +515,8 @@ footer span {
         padding: 17px;
     }
 
-    .logo {
-        font-size: 21px;
+    .logo-title {
+        font-size: 18px;
     }
 }
 </style>
@@ -509,51 +525,62 @@ footer span {
 <body>
 
 <header>
-    <div class="logo">REY SOON SALUNI</div>
+    <!-- LOGO BILA NENO SOON -->
+    <a href="#home" class="logo-container">
+        <svg width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="#ff4081" stroke-width="4" fill="#171219"/>
+            <path d="M35 65 C 30 45, 45 30, 55 35 C 65 40, 70 25, 65 20 C 80 35, 75 60, 65 70 C 55 80, 40 75, 35 65 Z" fill="#ff4081"/>
+            <path d="M42 45 C 45 40, 50 40, 52 45" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text">
+            <span class="logo-title">REY</span>
+            <span class="logo-subtitle">HAIR SALON</span>
+        </div>
+    </a>
 
     <nav>
-        <a href="#home" data-sw="Nyumbani" data-en="Home">Nyumbani</a>
-        <a href="#services" data-sw="Huduma" data-en="Services">Huduma</a>
-        <a href="#gallery" data-sw="Misuko" data-en="Styles">Misuko</a>
-        <a href="#add-style" data-sw="Ongeza Mtindo" data-en="Add Style">Ongeza Mtindo</a>
-        <a href="#about" data-sw="Kuhusu Sisi" data-en="About Us">Kuhusu Sisi</a>
-        <a href="#booking" data-sw="Weka Nafasi" data-en="Book Now">Weka Nafasi</a>
-        <a href="#contact" data-sw="Mawasiliano" data-en="Contact">Mawasiliano</a>
+        <a href="#home" data-sw="Nyumbani" data-en="Home">Home</a>
+        <a href="#services" data-sw="Huduma" data-en="Services">Services</a>
+        <a href="#gallery" data-sw="Misuko" data-en="Styles">Hairstyles</a>
+        <a href="#add-style" data-sw="Ongeza Mtindo" data-en="Add Style">Add Style</a>
+        <a href="#about" data-sw="Kuhusu Sisi" data-en="About Us">About Us</a>
+        <a href="#booking" data-sw="Weka Nafasi" data-en="Book Now">Book Now</a>
+        <a href="#contact" data-sw="Mawasiliano" data-en="Contact">Contact</a>
     </nav>
 
     <div class="header-controls">
         <div class="lang-switcher">
-            <button class="lang-btn active" onclick="setLanguage('sw')">🇹🇿 SW</button>
-            <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+            <button class="lang-btn" onclick="setLanguage('sw')">🇹🇿 SW</button>
+            <button class="lang-btn active" onclick="setLanguage('en')">🇬🇧 EN</button>
         </div>
-        <button class="theme-toggle" id="themeToggle" title="Badili Mwanga/Giza">🌙</button>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark">🌙</button>
     </div>
 </header>
 
 <main>
 <section class="hero" id="home">
     <div class="hero-content">
-        <h1 data-sw="Karibu <span>REY SOON SALUNI</span>" data-en="Welcome to <span>REY SOON SALON</span>">
-            Karibu <span>REY SOON SALUNI</span>
+        <h1 data-sw="Karibu <span>REY SALUNI</span>" data-en="Welcome to <span>REY SALON</span>">
+            Welcome to <span>REY SALON</span>
         </h1>
 
         <p data-sw="Uzuri, kusuka na kutengeneza nywele kwa mtindo unaokupendeza. Tunakukaribisha upate huduma bora."
            data-en="Beauty, braiding and hairstyling to match your style. Visit us for quality hair care services.">
-            Uzuri, kusuka na kutengeneza nywele kwa mtindo unaokupendeza. Tunakukaribisha upate huduma bora.
+            Beauty, braiding and hairstyling to match your style. Visit us for quality hair care services.
         </p>
 
-        <a href="#booking" class="btn" data-sw="Weka Nafasi Sasa" data-en="Book an Appointment">Weka Nafasi Sasa</a>
+        <a href="#booking" class="btn" data-sw="Weka Nafasi Sasa" data-en="Book an Appointment">Book an Appointment</a>
     </div>
 
-    <img src="Hair%20Style.jpg" alt="Mtindo wa nywele"
-         onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe0ec/7a2850?text=REY+SOON+SALUNI';">
+    <img src="Hair%20Style.jpg" alt="Hair Style"
+         onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe0ec/7a2850?text=REY+SALON';">
 </section>
 
-<!-- SECTION YA HUDUMA -->
+<!-- SERVICES SECTION -->
 <section id="services">
     <div class="section-title">
-        <h2 data-sw="Huduma Zetu" data-en="Our Services">Huduma Zetu</h2>
-        <p data-sw="Chagua huduma inayokufaa." data-en="Choose the service that suits you.">Chagua huduma inayokufaa.</p>
+        <h2 data-sw="Huduma Zetu" data-en="Our Services">Our Services</h2>
+        <p data-sw="Chagua huduma inayokufaa." data-en="Choose the service that suits you.">Choose the service that suits you.</p>
     </div>
 
     <div class="services">
@@ -561,9 +588,9 @@ footer span {
             <img src="Box%20Braids.jpg" alt="Box Braids" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
             <div class="service-info">
                 <h3>Box Braids</h3>
-                <p data-sw="Mitindo ya kusuka inayopendeza na yenye mvuto." data-en="Beautiful and stylish box braids.">Mitindo ya kusuka inayopendeza na yenye mvuto.</p>
+                <p data-sw="Mitindo ya kusuka inayopendeza na yenye mvuto." data-en="Beautiful and stylish box braids.">Beautiful and stylish box braids.</p>
                 <div class="price">TSh 30,000</div>
-                <button class="btn select-service-btn" onclick="selectService('Box Braids')" data-sw="Chagua Huduma" data-en="Choose Service">Chagua Huduma</button>
+                <button class="btn select-service-btn" onclick="selectService('Box Braids')" data-sw="Chagua Huduma" data-en="Choose Service">Choose Service</button>
             </div>
         </article>
 
@@ -571,9 +598,9 @@ footer span {
             <img src="Knotless%20Braids.jpg" alt="Knotless Braids" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Knotless+Braids';">
             <div class="service-info">
                 <h3>Knotless Braids</h3>
-                <p data-sw="Kusuka kwa mtindo wa kisasa na wa kuvutia." data-en="Modern and elegant knotless braids.">Kusuka kwa mtindo wa kisasa na wa kuvutia.</p>
+                <p data-sw="Kusuka kwa mtindo wa kisasa na wa kuvutia." data-en="Modern and elegant knotless braids.">Modern and elegant knotless braids.</p>
                 <div class="price">TSh 35,000</div>
-                <button class="btn select-service-btn" onclick="selectService('Knotless Braids')" data-sw="Chagua Huduma" data-en="Choose Service">Chagua Huduma</button>
+                <button class="btn select-service-btn" onclick="selectService('Knotless Braids')" data-sw="Chagua Huduma" data-en="Choose Service">Choose Service</button>
             </div>
         </article>
 
@@ -581,39 +608,39 @@ footer span {
             <img src="Cornrows.jpg" alt="Cornrows" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Cornrows';">
             <div class="service-info">
                 <h3>Cornrows</h3>
-                <p data-sw="Mitindo maridadi ya kusuka karibu na kichwa." data-en="Neat and stylish cornrow braids.">Mitindo maridadi ya kusuka karibu na kichwa.</p>
+                <p data-sw="Mitindo maridadi ya kusuka karibu na kichwa." data-en="Neat and stylish cornrow braids.">Neat and stylish cornrow braids.</p>
                 <div class="price">TSh 20,000</div>
-                <button class="btn select-service-btn" onclick="selectService('Cornrows')" data-sw="Chagua Huduma" data-en="Choose Service">Chagua Huduma</button>
+                <button class="btn select-service-btn" onclick="selectService('Cornrows')" data-sw="Chagua Huduma" data-en="Choose Service">Choose Service</button>
             </div>
         </article>
 
         <article class="service-card">
-            <img src="Hair%20Style.jpg" alt="Matunzo ya Nywele" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Hair+Care';">
+            <img src="Hair%20Style.jpg" alt="Hair Care" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Hair+Care';">
             <div class="service-info">
-                <h3 data-sw="Matunzo ya Nywele" data-en="Hair Care">Matunzo ya Nywele</h3>
-                <p data-sw="Tunasaidia kutunza nywele zako kwa uangalifu." data-en="We help care for your hair with attention.">Tunasaidia kutunza nywele zako kwa uangalifu.</p>
+                <h3 data-sw="Matunzo ya Nywele" data-en="Hair Care">Hair Care</h3>
+                <p data-sw="Tunasaidia kutunza nywele zako kwa uangalifu." data-en="We help care for your hair with attention.">We help care for your hair with attention.</p>
                 <div class="price">TSh 15,000</div>
-                <button class="btn select-service-btn" onclick="selectService('Matunzo ya Nywele')" data-sw="Chagua Huduma" data-en="Choose Service">Chagua Huduma</button>
+                <button class="btn select-service-btn" onclick="selectService('Matunzo ya Nywele')" data-sw="Chagua Huduma" data-en="Choose Service">Choose Service</button>
             </div>
         </article>
     </div>
 </section>
 
-<!-- GALARI YA MISUKO NA BEI -->
+<!-- HAIRSTYLE GALLERY SECTION -->
 <section id="gallery" style="background: var(--card-bg);">
     <div class="section-title">
-        <h2 data-sw="Picha za Misuko na Bei" data-en="Hairstyle Gallery & Prices">Picha za Misuko na Bei</h2>
-        <p data-sw="Tazama sampuli za misuko yetu na uchague mtindo unaoupenda." data-en="Browse sample styles and pick your favourite.">Tazama sampuli za misuko yetu na uchague mtindo unaoupenda.</p>
+        <h2 data-sw="Picha za Misuko na Bei" data-en="Hairstyle Gallery & Prices">Hairstyle Gallery & Prices</h2>
+        <p data-sw="Tazama sampuli za misuko yetu na uchague mtindo unaoupenda." data-en="Browse sample styles and pick your favourite.">Browse sample styles and pick your favourite.</p>
     </div>
 
     <div class="gallery-grid" id="galleryContainer">
         <article class="gallery-card">
-            <img src="Box%20Braids.jpg" alt="Box Braids Kibao" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
+            <img src="Box%20Braids.jpg" alt="Box Braids" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
             <div class="gallery-info">
                 <h3>Box Braids (Medium)</h3>
-                <p data-sw="Kusuka Box Braids za saizi ya kati." data-en="Medium sized neat box braids.">Kusuka Box Braids za saizi ya kati.</p>
+                <p data-sw="Kusuka Box Braids za saizi ya kati." data-en="Medium sized neat box braids.">Medium sized neat box braids.</p>
                 <div class="price">TSh 30,000</div>
-                <button class="btn" onclick="selectService('Box Braids')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Weka Nafasi Mtindo Huu</button>
+                <button class="btn" onclick="selectService('Box Braids')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Book This Style</button>
             </div>
         </article>
 
@@ -621,152 +648,152 @@ footer span {
             <img src="Knotless%20Braids.jpg" alt="Knotless Braids" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Knotless+Braids';">
             <div class="gallery-info">
                 <h3>Knotless Braids (Jumbo)</h3>
-                <p data-sw="Kusuka Knotless braids kubwa za kisasa." data-en="Jumbo modern knotless braids.">Kusuka Knotless braids kubwa za kisasa.</p>
+                <p data-sw="Kusuka Knotless braids kubwa za kisasa." data-en="Jumbo modern knotless braids.">Jumbo modern knotless braids.</p>
                 <div class="price">TSh 35,000</div>
-                <button class="btn" onclick="selectService('Knotless Braids')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Weka Nafasi Mtindo Huu</button>
+                <button class="btn" onclick="selectService('Knotless Braids')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Book This Style</button>
             </div>
         </article>
 
         <article class="gallery-card">
-            <img src="Cornrows.jpg" alt="Lines & Cornrows" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Cornrows';">
+            <img src="Cornrows.jpg" alt="Cornrows" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Cornrows';">
             <div class="gallery-info">
-                <h3>Lines za Kichwa Vizuri</h3>
-                <p data-sw="Cornrows nadhifu za mistari ya kupendeza." data-en="Neat and beautiful lined cornrows.">Cornrows nadhifu za mistari ya kupendeza.</p>
+                <h3>Neat Cornrows</h3>
+                <p data-sw="Cornrows nadhifu za mistari ya kupendeza." data-en="Neat and beautiful lined cornrows.">Neat and beautiful lined cornrows.</p>
                 <div class="price">TSh 20,000</div>
-                <button class="btn" onclick="selectService('Cornrows')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Weka Nafasi Mtindo Huu</button>
+                <button class="btn" onclick="selectService('Cornrows')" data-sw="Weka Nafasi Mtindo Huu" data-en="Book This Style">Book This Style</button>
             </div>
         </article>
     </div>
 </section>
 
-<!-- SEHEMU YA KUPAKIA/KUONGEZA PICHA NA BEI MPYA (ADMIN UPLOAD) -->
+<!-- ADMIN UPLOAD SECTION -->
 <section class="admin-section" id="add-style">
     <div class="section-title">
-        <h2 data-sw="Ongeza Mtindo Mpya wa Nywele" data-en="Add New Hairstyle">Ongeza Mtindo Mpya wa Nywele</h2>
-        <p data-sw="Pakia picha ya msuko na bei yake ili ionekane kwenye galari." data-en="Upload a style photo and price to show in gallery.">Pakia picha ya msuko na bei yake ili ionekane kwenye galari.</p>
+        <h2 data-sw="Ongeza Mtindo Mpya wa Nywele" data-en="Add New Hairstyle">Add New Hairstyle</h2>
+        <p data-sw="Pakia picha ya msuko na bei yake ili ionekane kwenye galari." data-en="Upload a style photo and price to show in gallery.">Upload a style photo and price to show in gallery.</p>
     </div>
 
     <form class="admin-form" id="uploadStyleForm">
         <div class="form-grid">
             <div class="form-group">
-                <label for="styleTitle" data-sw="Jina la Mtindo" data-en="Style Title">Jina la Mtindo</label>
-                <input id="styleTitle" type="text" required placeholder="Mfano: Passion Twists">
+                <label for="styleTitle" data-sw="Jina la Mtindo" data-en="Style Title">Style Title</label>
+                <input id="styleTitle" type="text" required placeholder="Example: Passion Twists">
             </div>
 
             <div class="form-group">
-                <label for="stylePrice" data-sw="Bei (TSh)" data-en="Price (TSh)">Bei (TSh)</label>
-                <input id="stylePrice" type="number" required placeholder="Mfano: 40000">
+                <label for="stylePrice" data-sw="Bei (TSh)" data-en="Price (TSh)">Price (TSh)</label>
+                <input id="stylePrice" type="number" required placeholder="Example: 40000">
             </div>
 
             <div class="form-group full">
-                <label for="styleImage" data-sw="Chagua Picha ya Mtindo/Binti" data-en="Choose Style Photo">Chagua Picha ya Mtindo/Binti</label>
+                <label for="styleImage" data-sw="Chagua Picha ya Mtindo/Binti" data-en="Choose Style Photo">Choose Style Photo</label>
                 <input id="styleImage" type="file" accept="image/*" required>
             </div>
 
             <div class="form-group full">
-                <label for="styleDesc" data-sw="Maelezo Mafupi" data-en="Short Description">Maelezo Mafupi</label>
-                <textarea id="styleDesc" placeholder="Andika maelezo kidogo kuhusu mtindo huu..."></textarea>
+                <label for="styleDesc" data-sw="Maelezo Mafupi" data-en="Short Description">Short Description</label>
+                <textarea id="styleDesc" placeholder="Write a brief description..."></textarea>
             </div>
         </div>
 
         <button class="btn" type="submit" data-sw="Weka Mtindo Kwenye Galari" data-en="Add Style to Gallery">
-            Weka Mtindo Kwenye Galari
+            Add Style to Gallery
         </button>
     </form>
 </section>
 
 <section class="about" id="about">
     <div class="section-title">
-        <h2 data-sw="Kuhusu REY SOON SALUNI" data-en="About REY SOON SALON">Kuhusu REY SOON SALUNI</h2>
+        <h2 data-sw="Kuhusu REY SALUNI" data-en="About REY SALON">About REY SALON</h2>
     </div>
 
-    <p data-sw="REY SOON SALUNI inalenga kukupa huduma za nywele zenye ubora, usafi na ubunifu. Tunakukaribisha uchague mtindo unaoupenda."
-       data-en="REY SOON SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.">
-       REY SOON SALUNI inalenga kukupa huduma za nywele zenye ubora, usafi na ubunifu. Tunakukaribisha uchague mtindo unaoupenda.
+    <p data-sw="REY SALUNI inalenga kukupa huduma za nywele zenye ubora, usafi na ubunifu. Tunakukaribisha uchague mtindo unaoupenda."
+       data-en="REY SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.">
+       REY SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.
     </p>
 
-    <p><strong data-sw="Mahali:" data-en="Location:">Mahali:</strong> DAR ES SALAAM, Tanzania</p>
+    <p><strong data-sw="Mahali:" data-en="Location:">Location:</strong> DAR ES SALAAM, Tanzania</p>
 </section>
 
-<!-- SECTION YA BOOKING FORM -->
+<!-- BOOKING FORM SECTION -->
 <section class="booking" id="booking">
     <div class="section-title">
-        <h2 data-sw="Weka Nafasi ya Huduma" data-en="Book a Service">Weka Nafasi ya Huduma</h2>
-        <p data-sw="Jaza taarifa zako ili kuomba nafasi." data-en="Fill in your details to request an appointment.">Jaza taarifa zako ili kuomba nafasi.</p>
+        <h2 data-sw="Weka Nafasi ya Huduma" data-en="Book a Service">Book a Service</h2>
+        <p data-sw="Jaza taarifa zako ili kuomba nafasi." data-en="Fill in your details to request an appointment.">Fill in your details to request an appointment.</p>
     </div>
 
     <form class="booking-form" id="bookingForm">
         <div class="form-grid">
             <div class="form-group">
-                <label for="customerName" data-sw="Jina Kamili" data-en="Full Name">Jina Kamili</label>
-                <input id="customerName" name="name" type="text" autocomplete="name" required placeholder="Ingiza jina lako">
+                <label for="customerName" data-sw="Jina Kamili" data-en="Full Name">Full Name</label>
+                <input id="customerName" name="name" type="text" autocomplete="name" required placeholder="Enter your full name">
             </div>
 
             <div class="form-group">
-                <label for="customerPhone" data-sw="Namba ya Simu" data-en="Phone Number">Namba ya Simu</label>
-                <input id="customerPhone" name="phone" type="tel" autocomplete="tel" required placeholder="Mfano: 0787999784">
+                <label for="customerPhone" data-sw="Namba ya Simu" data-en="Phone Number">Phone Number</label>
+                <input id="customerPhone" name="phone" type="tel" autocomplete="tel" required placeholder="Example: 0787999784">
             </div>
 
             <div class="form-group">
-                <label for="service" data-sw="Huduma Unayotaka" data-en="Service Required">Huduma Unayotaka</label>
+                <label for="service" data-sw="Huduma Unayotaka" data-en="Service Required">Service Required</label>
                 <select id="service" name="service" required onchange="updatePriceSummary()">
-                    <option value="" data-sw="Chagua huduma" data-en="Select a service">Chagua huduma</option>
+                    <option value="" data-sw="Chagua huduma" data-en="Select a service">Select a service</option>
                     <option value="Box Braids">Box Braids - TSh 30,000</option>
                     <option value="Knotless Braids">Knotless Braids - TSh 35,000</option>
                     <option value="Cornrows">Cornrows - TSh 20,000</option>
-                    <option value="Matunzo ya Nywele">Matunzo ya Nywele - TSh 15,000</option>
-                    <option value="Mtindo Mwingine">Mtindo Mwingine - Bei itaelezwa</option>
+                    <option value="Matunzo ya Nywele">Hair Care - TSh 15,000</option>
+                    <option value="Mtindo Mwingine">Other Style - Price to be confirmed</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="bookingDate" data-sw="Tarehe Unayotaka" data-en="Preferred Date">Tarehe Unayotaka</label>
+                <label for="bookingDate" data-sw="Tarehe Unayotaka" data-en="Preferred Date">Preferred Date</label>
                 <input id="bookingDate" name="date" type="date" required>
             </div>
 
             <div class="form-group">
-                <label for="bookingTime" data-sw="Muda" data-en="Time">Muda</label>
+                <label for="bookingTime" data-sw="Muda" data-en="Time">Time</label>
                 <input id="bookingTime" name="time" type="time" required>
             </div>
 
             <div class="form-group full">
-                <label for="message" data-sw="Ujumbe (Si Lazima)" data-en="Message (Optional)">Ujumbe (Si Lazima)</label>
-                <textarea id="message" name="message" placeholder="Andika maelezo ya ziada hapa..."></textarea>
+                <label for="message" data-sw="Ujumbe (Si Lazima)" data-en="Message (Optional)">Message (Optional)</label>
+                <textarea id="message" name="message" placeholder="Write additional details here..."></textarea>
             </div>
         </div>
 
-        <!-- DYNAMIC PRICE CALCULATOR SUMMARY -->
         <div class="price-summary" id="priceSummaryBox">
-            <span data-sw="Jumla ya Gharama:" data-en="Total Cost:">Jumla ya Gharama:</span>
+            <span data-sw="Jumla ya Gharama:" data-en="Total Cost:">Total Cost:</span>
             <span id="priceDisplay" style="color: var(--pink);">TSh 0</span>
         </div>
 
         <button class="btn" type="submit" id="submitButton" data-sw="Tuma Ombi la Booking" data-en="Submit Booking Request">
-            Tuma Ombi la Booking
+            Submit Booking Request
         </button>
     </form>
 </section>
 
 <section class="contact" id="contact">
     <div class="section-title">
-        <h2 data-sw="Wasiliana Nasi" data-en="Contact Us">Wasiliana Nasi</h2>
+        <h2 data-sw="Wasiliana Nasi" data-en="Contact Us">Contact Us</h2>
     </div>
 
-    <p><strong data-sw="Simu / WhatsApp:" data-en="Phone / WhatsApp:">Simu / WhatsApp:</strong>
+    <p><strong data-sw="Simu / WhatsApp:" data-en="Phone / WhatsApp:">Phone / WhatsApp:</strong>
        <a href="https://wa.me/255787999784" target="_blank" rel="noopener">0787999784</a></p>
 
     <p><strong>Email:</strong> <a href="mailto:rehemakoloneli@gmail.com">rehemakoloneli@gmail.com</a></p>
-    <p><strong data-sw="Mahali:" data-en="Location:">Mahali:</strong> DAR ES SALAAM, Tanzania</p>
+    <p><strong data-sw="Mahali:" data-en="Location:">Location:</strong> DAR ES SALAAM, Tanzania</p>
 </section>
 </main>
 
 <footer>
-    <p>© <span id="year"></span> <span>REY SOON SALUNI</span>. <span data-sw="Haki zote zimehifadhiwa." data-en="All rights reserved.">Haki zote zimehifadhiwa.</span></p>
+    <p>© <span id="year"></span> <span>REY SALON</span>. <span data-sw="Haki zote zimehifadhiwa." data-en="All rights reserved.">All rights reserved.</span></p>
     
-    <!-- DEVELOPER CONTACT SECTION (MALULU) - OPTIMIZED FOR MOBILE -->
+    <!-- DEVELOPER CONTACT SECTION & GITHUB WEBSITE LINK -->
     <div class="developer-info">
         <div>Designed & Developed by <strong>MALULU</strong></div>
         <div class="developer-links">
+            <a href="https://charles-2013.github.io/saloonrey/" target="_blank" rel="noopener">🌐 Visit Website Portfolio</a>
             <a href="https://wa.me/255750344093" target="_blank" rel="noopener">💬 WhatsApp: 0750344093</a>
             <a href="tel:0750344093">📞 Call: 0750344093</a>
         </div>
@@ -774,16 +801,16 @@ footer span {
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/255787999784" class="floating-whatsapp" target="_blank" rel="noopener" title="Chat nasi WhatsApp">💬</a>
+<a href="https://wa.me/255787999784" class="floating-whatsapp" target="_blank" rel="noopener" title="Chat with us on WhatsApp">💬</a>
 
 <!-- CONFIRMATION MODAL -->
 <div class="modal-overlay" id="bookingModal">
     <div class="modal-content">
-        <h3 data-sw="Hakiki Ombi Lako" data-en="Confirm Your Request">Hakiki Ombi Lako</h3>
+        <h3 data-sw="Hakiki Ombi Lako" data-en="Confirm Your Request">Confirm Your Request</h3>
         <div class="modal-details" id="modalDetails"></div>
         <div class="modal-actions">
-            <button class="btn" onclick="sendToWhatsApp()" data-sw="Endelea WhatsApp" data-en="Continue to WhatsApp">Endelea WhatsApp</button>
-            <button class="btn btn-secondary" onclick="closeModal()" data-sw="Rudi Nyuma" data-en="Go Back">Rudi Nyuma</button>
+            <button class="btn" onclick="sendToWhatsApp()" data-sw="Endelea WhatsApp" data-en="Continue to WhatsApp">Continue to WhatsApp</button>
+            <button class="btn btn-secondary" onclick="closeModal()" data-sw="Rudi Nyuma" data-en="Go Back">Go Back</button>
         </div>
     </div>
 </div>
@@ -791,7 +818,7 @@ footer span {
 <script>
 "use strict";
 
-let currentLang = "sw";
+let currentLang = "en";
 let pendingWhatsappUrl = "";
 
 const prices = {
@@ -802,7 +829,6 @@ const prices = {
     "Mtindo Mwingine": 0
 };
 
-// Mfumo wa Lugha (Swahili / English)
 function setLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
@@ -819,7 +845,6 @@ function setLanguage(lang) {
     updatePriceSummary();
 }
 
-// Dark / Light Mode Switcher
 const themeToggle = document.getElementById('themeToggle');
 themeToggle.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -828,7 +853,6 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = isDark ? '🌙' : '☀️';
 });
 
-// Dynamic Price Calculator
 function updatePriceSummary() {
     const serviceVal = document.getElementById("service").value;
     const price = prices[serviceVal] || 0;
@@ -846,7 +870,6 @@ function updatePriceSummary() {
 function selectService(serviceName) {
     const serviceSelect = document.getElementById("service");
     
-    // Angalia kama kipo kwenye select options; kama hakipo kinajiongeza
     let exists = Array.from(serviceSelect.options).some(opt => opt.value === serviceName);
     if (!exists) {
         let opt = document.createElement("option");
@@ -860,33 +883,28 @@ function selectService(serviceName) {
     document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
 }
 
-// Tarehe ya leo kama kianzio
 const dateInput = document.getElementById("bookingDate");
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split("T")[0];
 dateInput.min = localToday;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Form Ya Kupakia Picha Mpya Kwenye Galari
 document.getElementById("uploadStyleForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const title = document.getElementById("styleTitle").value.trim();
     const priceVal = parseInt(document.getElementById("stylePrice").value, 10);
     const imageFile = document.getElementById("styleImage").files[0];
-    const desc = document.getElementById("styleDesc").value.trim() || "Mtindo mpya wa kuvutia.";
+    const desc = document.getElementById("styleDesc").value.trim() || (currentLang === "en" ? "New trendy hairstyle." : "Mtindo mpya wa kuvutia.");
 
     if (!title || !priceVal || !imageFile) return;
 
-    // Kusoma picha kutoka kwenye kioo cha mteja/admin
     const reader = new FileReader();
     reader.onload = function(event) {
         const imageUrl = event.target.result;
 
-        // Hifadhi bei
         prices[title] = priceVal;
 
-        // Ongeza kadi mpya kwenye Galari
         const galleryContainer = document.getElementById("galleryContainer");
         const newCard = document.createElement("article");
         newCard.className = "gallery-card";
@@ -896,27 +914,25 @@ document.getElementById("uploadStyleForm").addEventListener("submit", function(e
                 <h3>${title}</h3>
                 <p>${desc}</p>
                 <div class="price">TSh ${priceVal.toLocaleString("en-US")}</div>
-                <button class="btn" onclick="selectService('${title}')">Weka Nafasi Mtindo Huu</button>
+                <button class="btn" onclick="selectService('${title}')">${currentLang === 'en' ? 'Book This Style' : 'Weka Nafasi Mtindo Huu'}</button>
             </div>
         `;
 
         galleryContainer.prepend(newCard);
 
-        // Ongeza huduma kwenye dropdown select ya booking
         const serviceSelect = document.getElementById("service");
         const newOption = document.createElement("option");
         newOption.value = title;
         newOption.textContent = `${title} - TSh ${priceVal.toLocaleString("en-US")}`;
         serviceSelect.appendChild(newOption);
 
-        alert("Mtindo mpya umeongezwa kwenye Galari na Mfumo wa Booking!");
+        alert(currentLang === 'en' ? "New style added to Gallery and Booking Form!" : "Mtindo mpya umeongezwa kwenye Galari na Mfumo wa Booking!");
         document.getElementById("uploadStyleForm").reset();
     };
 
     reader.readAsDataURL(imageFile);
 });
 
-// Modal Popup Control
 function closeModal() {
     document.getElementById("bookingModal").classList.remove("active");
 }
@@ -928,7 +944,6 @@ function sendToWhatsApp() {
     }
 }
 
-// Form Submission with Confirmation Modal
 document.getElementById("bookingForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -947,7 +962,6 @@ document.getElementById("bookingForm").addEventListener("submit", function(event
 
     const priceText = price ? "TSh " + price.toLocaleString("en-US") : (currentLang === "en" ? "To be confirmed" : "Itaelezwa");
 
-    // Muhtasari kwenye Modal
     const modalDetails = document.getElementById("modalDetails");
     modalDetails.innerHTML = `
         <p><span>${currentLang === 'en' ? 'Name:' : 'Jina:'}</span> <strong>${name}</strong></p>
@@ -971,7 +985,6 @@ document.getElementById("bookingForm").addEventListener("submit", function(event
 
     pendingWhatsappUrl = "https://wa.me/255787999784?text=" + encodeURIComponent(whatsappText);
     
-    // Onyesha Modal
     document.getElementById("bookingModal").classList.add("active");
 });
 </script>
