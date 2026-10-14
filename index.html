@@ -219,10 +219,9 @@ section {
 
 .service-card img, .gallery-card img {
     width: 100%;
-    height: 210px;
+    height: 220px;
     object-fit: cover;
     display: block;
-    cursor: pointer;
 }
 
 .service-info, .gallery-info {
@@ -250,11 +249,11 @@ section {
     margin: 0 auto 15px;
 }
 
-.booking {
+.booking, .admin-section {
     background: var(--hero-bg);
 }
 
-.booking-form {
+.booking-form, .admin-form {
     max-width: 700px;
     margin: auto;
     background: var(--card-bg);
@@ -313,7 +312,7 @@ section {
     font-weight: bold;
 }
 
-.booking-form .btn {
+.booking-form .btn, .admin-form .btn {
     width: 100%;
     font-size: 16px;
 }
@@ -337,17 +336,55 @@ footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 22px 10px;
+    padding: 30px 15px 90px 15px; /* Added extra bottom padding so button doesn't block developer contacts */
+    font-size: 14px;
 }
 
 footer span {
     color: var(--pink);
 }
 
-/* Floating WhatsApp Button */
+/* Developer Contact Section - Specifically Optimized for Mobile */
+.developer-info {
+    margin-top: 15px;
+    padding: 15px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.developer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.developer-info a {
+    color: var(--pink);
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255, 64, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 64, 129, 0.3);
+    transition: 0.2s;
+}
+
+.developer-info a:hover {
+    background: var(--pink);
+    color: white;
+}
+
+/* Floating WhatsApp Button - Lifted Higher on Mobile */
 .floating-whatsapp {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
     background: #25d366;
     color: white;
@@ -358,9 +395,9 @@ footer span {
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     text-decoration: none;
-    z-index: 99;
+    z-index: 999;
     transition: transform 0.2s;
 }
 
@@ -413,7 +450,7 @@ footer span {
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px border var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 4px;
 }
 
@@ -458,7 +495,7 @@ footer span {
         grid-template-columns: 1fr;
     }
 
-    .booking-form {
+    .booking-form, .admin-form {
         padding: 17px;
     }
 
@@ -478,6 +515,7 @@ footer span {
         <a href="#home" data-sw="Nyumbani" data-en="Home">Nyumbani</a>
         <a href="#services" data-sw="Huduma" data-en="Services">Huduma</a>
         <a href="#gallery" data-sw="Misuko" data-en="Styles">Misuko</a>
+        <a href="#add-style" data-sw="Ongeza Mtindo" data-en="Add Style">Ongeza Mtindo</a>
         <a href="#about" data-sw="Kuhusu Sisi" data-en="About Us">Kuhusu Sisi</a>
         <a href="#booking" data-sw="Weka Nafasi" data-en="Book Now">Weka Nafasi</a>
         <a href="#contact" data-sw="Mawasiliano" data-en="Contact">Mawasiliano</a>
@@ -568,7 +606,7 @@ footer span {
         <p data-sw="Tazama sampuli za misuko yetu na uchague mtindo unaoupenda." data-en="Browse sample styles and pick your favourite.">Tazama sampuli za misuko yetu na uchague mtindo unaoupenda.</p>
     </div>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid" id="galleryContainer">
         <article class="gallery-card">
             <img src="Box%20Braids.jpg" alt="Box Braids Kibao" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
             <div class="gallery-info">
@@ -599,6 +637,42 @@ footer span {
             </div>
         </article>
     </div>
+</section>
+
+<!-- SEHEMU YA KUPAKIA/KUONGEZA PICHA NA BEI MPYA (ADMIN UPLOAD) -->
+<section class="admin-section" id="add-style">
+    <div class="section-title">
+        <h2 data-sw="Ongeza Mtindo Mpya wa Nywele" data-en="Add New Hairstyle">Ongeza Mtindo Mpya wa Nywele</h2>
+        <p data-sw="Pakia picha ya msuko na bei yake ili ionekane kwenye galari." data-en="Upload a style photo and price to show in gallery.">Pakia picha ya msuko na bei yake ili ionekane kwenye galari.</p>
+    </div>
+
+    <form class="admin-form" id="uploadStyleForm">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="styleTitle" data-sw="Jina la Mtindo" data-en="Style Title">Jina la Mtindo</label>
+                <input id="styleTitle" type="text" required placeholder="Mfano: Passion Twists">
+            </div>
+
+            <div class="form-group">
+                <label for="stylePrice" data-sw="Bei (TSh)" data-en="Price (TSh)">Bei (TSh)</label>
+                <input id="stylePrice" type="number" required placeholder="Mfano: 40000">
+            </div>
+
+            <div class="form-group full">
+                <label for="styleImage" data-sw="Chagua Picha ya Mtindo/Binti" data-en="Choose Style Photo">Chagua Picha ya Mtindo/Binti</label>
+                <input id="styleImage" type="file" accept="image/*" required>
+            </div>
+
+            <div class="form-group full">
+                <label for="styleDesc" data-sw="Maelezo Mafupi" data-en="Short Description">Maelezo Mafupi</label>
+                <textarea id="styleDesc" placeholder="Andika maelezo kidogo kuhusu mtindo huu..."></textarea>
+            </div>
+        </div>
+
+        <button class="btn" type="submit" data-sw="Weka Mtindo Kwenye Galari" data-en="Add Style to Gallery">
+            Weka Mtindo Kwenye Galari
+        </button>
+    </form>
 </section>
 
 <section class="about" id="about">
@@ -688,6 +762,15 @@ footer span {
 
 <footer>
     <p>© <span id="year"></span> <span>REY SOON SALUNI</span>. <span data-sw="Haki zote zimehifadhiwa." data-en="All rights reserved.">Haki zote zimehifadhiwa.</span></p>
+    
+    <!-- DEVELOPER CONTACT SECTION (MALULU) - OPTIMIZED FOR MOBILE -->
+    <div class="developer-info">
+        <div>Designed & Developed by <strong>MALULU</strong></div>
+        <div class="developer-links">
+            <a href="https://wa.me/255750344093" target="_blank" rel="noopener">💬 WhatsApp: 0750344093</a>
+            <a href="tel:0750344093">📞 Call: 0750344093</a>
+        </div>
+    </div>
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
@@ -762,6 +845,16 @@ function updatePriceSummary() {
 
 function selectService(serviceName) {
     const serviceSelect = document.getElementById("service");
+    
+    // Angalia kama kipo kwenye select options; kama hakipo kinajiongeza
+    let exists = Array.from(serviceSelect.options).some(opt => opt.value === serviceName);
+    if (!exists) {
+        let opt = document.createElement("option");
+        opt.value = serviceName;
+        opt.textContent = `${serviceName} - TSh ${(prices[serviceName]||0).toLocaleString()}`;
+        serviceSelect.appendChild(opt);
+    }
+
     serviceSelect.value = serviceName;
     updatePriceSummary();
     document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
@@ -773,6 +866,55 @@ const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split("T")[0];
 dateInput.min = localToday;
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Form Ya Kupakia Picha Mpya Kwenye Galari
+document.getElementById("uploadStyleForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const title = document.getElementById("styleTitle").value.trim();
+    const priceVal = parseInt(document.getElementById("stylePrice").value, 10);
+    const imageFile = document.getElementById("styleImage").files[0];
+    const desc = document.getElementById("styleDesc").value.trim() || "Mtindo mpya wa kuvutia.";
+
+    if (!title || !priceVal || !imageFile) return;
+
+    // Kusoma picha kutoka kwenye kioo cha mteja/admin
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const imageUrl = event.target.result;
+
+        // Hifadhi bei
+        prices[title] = priceVal;
+
+        // Ongeza kadi mpya kwenye Galari
+        const galleryContainer = document.getElementById("galleryContainer");
+        const newCard = document.createElement("article");
+        newCard.className = "gallery-card";
+        newCard.innerHTML = `
+            <img src="${imageUrl}" alt="${title}">
+            <div class="gallery-info">
+                <h3>${title}</h3>
+                <p>${desc}</p>
+                <div class="price">TSh ${priceVal.toLocaleString("en-US")}</div>
+                <button class="btn" onclick="selectService('${title}')">Weka Nafasi Mtindo Huu</button>
+            </div>
+        `;
+
+        galleryContainer.prepend(newCard);
+
+        // Ongeza huduma kwenye dropdown select ya booking
+        const serviceSelect = document.getElementById("service");
+        const newOption = document.createElement("option");
+        newOption.value = title;
+        newOption.textContent = `${title} - TSh ${priceVal.toLocaleString("en-US")}`;
+        serviceSelect.appendChild(newOption);
+
+        alert("Mtindo mpya umeongezwa kwenye Galari na Mfumo wa Booking!");
+        document.getElementById("uploadStyleForm").reset();
+    };
+
+    reader.readAsDataURL(imageFile);
+});
 
 // Modal Popup Control
 function closeModal() {
