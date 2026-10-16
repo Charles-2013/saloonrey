@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="sw" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>REY SALON</title>
+<title>REY HAIR CANDY SALON</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 45 L35 25 L50 40 L65 25 L80 45 L75 55 L25 55 Z' fill='%23ff4081'/%3E%3Ccircle cx='20' cy='43' r='4' fill='%23ffd700'/%3E%3Ccircle cx='35' cy='23' r='4' fill='%23ffd700'/%3E%3Ccircle cx='50' cy='38' r='4' fill='%23ffd700'/%3E%3Ccircle cx='65' cy='23' r='4' fill='%23ffd700'/%3E%3Ccircle cx='80' cy='43' r='4' fill='%23ffd700'/%3E%3C/svg%3E">
 
 <style>
 :root {
@@ -48,6 +50,29 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+/* BANNER LA BANGO LAKO JUU KABISA MWANZO WA TOVUTI */
+.top-logo-banner {
+    width: 100%;
+    background: #0f0a10;
+    text-align: center;
+    padding: 15px 5%;
+    border-bottom: 4px solid var(--pink);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.top-logo-banner img {
+    max-width: 100%;
+    width: 950px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 64, 129, 0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
 header {
     background: var(--dark);
     color: white;
@@ -67,10 +92,6 @@ header {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-}
-
-.logo-text {
-    line-height: 1.1;
 }
 
 .logo-title {
@@ -523,6 +544,13 @@ footer span {
 
 <body>
 
+<!-- BANNER LA BANGO LAKO JUU KABISA MWANZO WA TOVUTI -->
+<div class="top-logo-banner">
+    <a href="#home">
+        <img src="logo.jpg.jpeg" alt="REY Hair Candy Salon Logo Banner">
+    </a>
+</div>
+
 <header>
     <a href="#home" class="logo-container">
         <svg width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -570,8 +598,7 @@ footer span {
         <a href="#booking" class="btn" data-sw="Weka Nafasi Sasa" data-en="Book an Appointment">Book an Appointment</a>
     </div>
 
-    <img src="Hair%20Style.jpg" alt="Hair Style"
-         onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe0ec/7a2850?text=REY+SALON';">
+    <img src="Hair Style.jpg" alt="Hair Style">
 </section>
 
 <section id="services">
@@ -582,7 +609,7 @@ footer span {
 
     <div class="services">
         <article class="service-card">
-            <img src="Box%20Braids.jpg" alt="Box Braids" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
+            <img src="Box Braids.jpg" alt="Box Braids" loading="lazy">
             <div class="service-info">
                 <h3>Box Braids</h3>
                 <p data-sw="Mitindo ya kusuka inayopendeza na yenye mvuto." data-en="Beautiful and stylish box braids.">Beautiful and stylish box braids.</p>
@@ -592,7 +619,7 @@ footer span {
         </article>
 
         <article class="service-card">
-            <img src="Knotless%20Braids.jpg" alt="Knotless Braids" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Knotless+Braids';">
+            <img src="Knotless Braids.jpg" alt="Knotless Braids" loading="lazy">
             <div class="service-info">
                 <h3>Knotless Braids</h3>
                 <p data-sw="Kusuka kwa mtindo wa kisasa na wa kuvutia." data-en="Modern and elegant knotless braids.">Modern and elegant knotless braids.</p>
@@ -602,7 +629,7 @@ footer span {
         </article>
 
         <article class="service-card">
-            <img src="Cornrows.jpg" alt="Cornrows" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Cornrows';">
+            <img src="Cornrows.jpg" alt="Cornrows" loading="lazy">
             <div class="service-info">
                 <h3>Cornrows</h3>
                 <p data-sw="Mitindo maridadi ya kusuka karibu na kichwa." data-en="Neat and stylish cornrow braids.">Neat and stylish cornrow braids.</p>
@@ -612,7 +639,7 @@ footer span {
         </article>
 
         <article class="service-card">
-            <img src="Hair%20Style.jpg" alt="Hair Care" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Hair+Care';">
+            <img src="Hair Style.jpg" alt="Hair Care" loading="lazy">
             <div class="service-info">
                 <h3 data-sw="Matunzo ya Nywele" data-en="Hair Care">Hair Care</h3>
                 <p data-sw="Tunasaidia kutunza nywele zako kwa uangalifu." data-en="We help care for your hair with attention.">We help care for your hair with attention.</p>
@@ -631,7 +658,7 @@ footer span {
 
     <div class="gallery-grid" id="galleryContainer">
         <article class="gallery-card">
-            <img src="Box%20Braids.jpg" alt="Box Braids" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Box+Braids';">
+            <img src="Box Braids.jpg" alt="Box Braids">
             <div class="gallery-info">
                 <h3>Box Braids (Medium)</h3>
                 <p data-sw="Kusuka Box Braids za saizi ya kati." data-en="Medium sized neat box braids.">Medium sized neat box braids.</p>
@@ -641,7 +668,7 @@ footer span {
         </article>
 
         <article class="gallery-card">
-            <img src="Knotless%20Braids.jpg" alt="Knotless Braids" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Knotless+Braids';">
+            <img src="Knotless Braids.jpg" alt="Knotless Braids">
             <div class="gallery-info">
                 <h3>Knotless Braids (Jumbo)</h3>
                 <p data-sw="Kusuka Knotless braids kubwa za kisasa." data-en="Jumbo modern knotless braids.">Jumbo modern knotless braids.</p>
@@ -651,7 +678,7 @@ footer span {
         </article>
 
         <article class="gallery-card">
-            <img src="Cornrows.jpg" alt="Cornrows" onerror="this.onerror=null;this.src='https://placehold.co/500x300/ffe0ec/7a2850?text=Cornrows';">
+            <img src="Cornrows.jpg" alt="Cornrows">
             <div class="gallery-info">
                 <h3>Neat Cornrows</h3>
                 <p data-sw="Cornrows nadhifu za mistari ya kupendeza." data-en="Neat and beautiful lined cornrows.">Neat and beautiful lined cornrows.</p>
@@ -704,7 +731,7 @@ footer span {
 
     <p data-sw="REY SALUNI inalenga kukupa huduma za nywele zenye ubora, usafi na ubunifu. Tunakukaribisha uchague mtindo unaoupenda."
        data-en="REY SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.">
-       REY SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.
+        REY SALON aims to provide quality hair services with care, cleanliness and creativity. We welcome you to choose your preferred style.
     </p>
 
     <p><strong data-sw="Mahali:" data-en="Location:">Location:</strong> DAR ES SALAAM, Tanzania</p>
